@@ -123,22 +123,19 @@ class init {
     this.waveGroup = new WaveGroup();
     this.waveGroup.resize(window.innerWidth, window.innerHeight);
 
-    this.animate = this.animate.bind(this); // bind `this` keyword here
+    this.animate = this.animate.bind(this);
 
-    // Start the animation loop
     this.resize();
     this.animate();
   }
 
   animate() {
-    // Clear the canvas
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.imageSmoothingEnabled = true;
 
-    // Update and draw the wave
     this.waveGroup.draw(ctx);
 
-    // Request the next frame of the animation
     requestAnimationFrame(this.animate);
   }
 
