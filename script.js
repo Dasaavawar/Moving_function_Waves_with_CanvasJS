@@ -25,7 +25,6 @@ class Point {
     this.cur += this.speed;
     this.y = this.fixedY + (Math.sin(this.cur) * this.max);
   }
-
 }
 
 class Wave {
@@ -34,7 +33,6 @@ class Wave {
     this.totalPoints = totalPoints;
     this.color = color;
     this.points = [];
-
   }
 
   resize(stageWidth, stageHeight) {
@@ -59,7 +57,6 @@ class Wave {
       );
       this.points[i] = point;
     }
-
   }
 
   draw(ctx) {
@@ -88,7 +85,6 @@ class Wave {
     
     ctx.fill();
     ctx.closePath();
-
   }
 }
 
@@ -123,7 +119,6 @@ class WaveGroup {
       wave.draw(ctx);
     }
   }
-
 }
 
 class init {
@@ -138,7 +133,6 @@ class init {
   }
 
   animate() {
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.imageSmoothingEnabled = true;
 
