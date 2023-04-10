@@ -4,12 +4,20 @@ canvas.width = window.innerWidth * 2;
 canvas.height = window.innerHeight * 2;
 ctx.scale(2, 2);
 
+const COLORS = [
+  'rgba(238, 130, 238, 0.4)', // violet
+  'rgba(255, 99, 71, 0.4)', // red
+  'rgba(50, 205, 50, 0.4)', // green
+  'rgba(255, 215, 0, 0.4)', // yellow
+  'rgba(0, 191, 255, 0.4)' // blue
+];
+
 class Point {
   constructor(index, x, y) {
     this.x = x;
     this.y = y;
     this.fixedY = y;
-    this.speed = 0.05;
+    this.speed = 0.02;
     this.cur = index;
     this.max = Math.random() * 100 + 80;
   }
@@ -88,7 +96,7 @@ class WaveGroup {
   constructor() {
     this.totalWaves = 5;
     this.totalPoints = 7;
-    this.color = [  'rgba(238, 130, 238, 0.4)', 'rgba(255, 99, 71, 0.4)', 'rgba(50, 205, 50, 0.4)', 'rgba(255, 215, 0, 0.4)', 'rgba(0, 191, 255, 0.4)'];
+    this.color = COLORS;
     this.waves = [];
     for (let i = 0; i < this.totalWaves; i++) {
       const wave = new Wave(
