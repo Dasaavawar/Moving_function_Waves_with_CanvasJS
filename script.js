@@ -65,6 +65,7 @@ class Wave {
     let prevY = this.points[0].y;
     ctx.moveTo(prevX, prevY);
     ctx.fillStyle = this.color;
+    
     for (let i = 1; i < this.totalPoints; i++) {
       if (i < this.totalPoints - 1) {
         this.points[i].update();
